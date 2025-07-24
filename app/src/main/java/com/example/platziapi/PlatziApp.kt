@@ -1,4 +1,8 @@
 package com.example.platziapi
 
-class PlatziApp {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class PlatziApp :Application() {
 }
