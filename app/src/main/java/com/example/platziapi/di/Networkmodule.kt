@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.Base64
 import javax.inject.Singleton
 import kotlin.text.Typography.dagger
 
@@ -16,7 +17,7 @@ class Networkmodule {
 @Singleton
     fun provideRetrofit(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl()
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.platziapi.data.models.product.ResponseProduct
 import com.example.platziapi.data.models.product.ResponseProductItem
 import com.example.platziapi.repositories.ProductRepositories
 import dagger.hilt.android.HiltAndroidApp
@@ -13,8 +14,13 @@ import javax.inject.Inject
 
 @HiltAndroidApp
 class ProductViewModel @Inject constructor(val repositories: ProductRepositories) :ViewModel(){
-    private val _allproducts:MutableLiveData<ResponseProductItem> = MutableLiveData()
-    val  allproducts:LiveData<ResponseProductItem> = _allproducts
+    private val _allproducts:MutableLiveData<ResponseProduct> = MutableLiveData()
+    val  allproducts:LiveData<ResponseProduct> = _allproducts
+
+init {
+    getAllproductvm()
+}
+
 
 
     fun getAllproductvm(){
