@@ -9,10 +9,11 @@ import com.example.platziapi.data.models.product.ResponseProduct
 import com.example.platziapi.data.models.product.ResponseProductItem
 import com.example.platziapi.repositories.ProductRepositories
 import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltAndroidApp
+@HiltViewModel
 class ProductViewModel @Inject constructor(val repositories: ProductRepositories) :ViewModel(){
     private val _allproducts:MutableLiveData<ResponseProduct> = MutableLiveData()
     val  allproducts:LiveData<ResponseProduct> = _allproducts
