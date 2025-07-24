@@ -15,7 +15,7 @@ data class ResponseProductItem(
     @SerializedName("images")
     var images: List<String>,
     @SerializedName("price")
-    var price: Int,
+    var price: Long,
     @SerializedName("slug")
     var slug: String,
     @SerializedName("title")
